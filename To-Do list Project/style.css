@@ -1,0 +1,81 @@
+.container{
+    width: 300px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+li{
+    list-style: none;
+}
+
+
+.todo-item {
+    padding: 8px;
+}
+
+ 
+.todo-text {
+    flex-grow: 1;
+    font-size: 25px;
+}
+
+
+.todo-checkbox {
+    width: 20px;  
+    height: 20px;  
+    cursor: pointer;
+    appearance: none;  
+    border: 2px solid black;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.todo-item {
+    display: flex;
+    align-items: center;   
+    gap: 10px;  
+}
+
+.todo-checkbox:checked::before {
+    content: "✔";
+    font-weight: bold;
+    color: black;
+    position: absolute;
+}
+
+ 
+.delete-todo {
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.to-do-input{
+    width:300px;
+    height:40px;
+    border: 2px solid black;
+}
+    
+
+.done{
+    text-decoration: line-through;
+    color:black;
+}
+ 
+      
+
+
+ 
