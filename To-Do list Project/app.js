@@ -22,14 +22,20 @@ function renderTodo(todo) {
 
 let todoItems = [];
 
-function addToDo(text) {
-    const todo = {
-        text,
-        checked: false,
-        id: Date.now(),
-    };
+let editId = null;
 
-    todoItems.push(todo);
+function addToDo(text) {
+    if (editId) {
+         
+        todoItems = todoItems.map(todo => 
+            todo.id === editId ? { ...todo, text } : todo
+        );
+        editId = null;  
+    } else {
+        
+        const todo = { text, checked: false, id: Date.now() };
+        todoItems.push(todo);
+    }
     renderList();
 }
 
@@ -43,11 +49,12 @@ function renderList() {
 }
 
 const form = document.querySelector("#id-form");
+const input = document.querySelector(".to-do-input");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const input = document.querySelector(".to-do-input");
+    
     const text = input.value.trim();
 
     if (text !== "") {
@@ -79,4 +86,21 @@ document.querySelector(".js-todo-list").addEventListener("click", event => {
 function deleteTodo(key) {
     todoItems = todoItems.filter(todo => todo.id !== Number(key));  
     renderList();  
+}
+
+document.querySelector(".js-todo-list").addEventListener("click", event => {
+    if (event.target.closest("li") && !event.target.closest(".js-delete-todo")) {  
+        const itemKey = event.target.closest("li").dataset.key;  
+        editTodo(itemKey);
+    }
+});
+
+
+function editTodo(key) {
+    const todo = todoItems.find(todo => todo.id === Number(key));
+    if (todo) {
+        input.value = todo.text;   
+        input.focus();
+        editId = todo.id;  
+    }
 }
