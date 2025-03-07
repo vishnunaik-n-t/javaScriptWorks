@@ -10,3 +10,4 @@
 // let obj1=new box(25);
 
 // obj1.display();
+
