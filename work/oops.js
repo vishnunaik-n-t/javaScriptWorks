@@ -85,28 +85,164 @@
 // Cat.makeSound();
 
 
-function Animal(name) {
-    this.name = name;
-}
+// function Animal(name) {
+//     this.name = name;
+// }
 
-Animal.prototype.makeSound = function () {
-    console.log("Some sound...");
-};
+// Animal.prototype.makeSound = function () {
+//     console.log("Some sound...");
+// };
 
-function Dog(name) {
-    Animal.call(this, name);  
-}
+// function Dog(name) {
+//     Animal.call(this, name);  
+// }
 
-Dog.prototype = Object.create(Animal.prototype);  
-Dog.prototype.constructor = Dog;
+// Dog.prototype = Object.create(Animal.prototype);  
+// Dog.prototype.constructor = Dog;
 
-Dog.prototype.makeSound = function () {
-    console.log("Woof! Woof!");
-};
+// Dog.prototype.makeSound = function () {
+//     console.log("Woof! Woof!");
+// };
 
 
 
-const dog = new Dog("Buddy");
-dog.makeSound();
-console.log(dog.name);
+// const dog = new Dog("Buddy");
+// dog.makeSound();
+// console.log(dog.name);
 
+
+
+// function counter(){
+//     let count=0;
+
+//     this.increment=function(){
+//         count++;
+//         console.log(count);
+//     }
+
+//     decrement=function(){
+//         count--;
+//         console.log(count);
+//     }
+// }
+
+// const c1=new counter();
+// console.log(c1.count);  //undefined
+
+
+// function user(name){
+//     this.name=name;
+
+//     this.getName=function(){
+//         return this.name;
+//     };
+// }
+
+// const user1=new user("vishnu");
+// const user2=new user("suchi");
+
+// console.log(user1.getName());
+// const takeName=user1.getName;
+// console.log(takeName());
+
+// function User(name) {
+//     this.name = name;
+    
+//     this.getName = function() {
+//         return this.name;
+//     };
+// }
+
+// const user1 = new User("Vishnu");
+
+// const getNameFn = user1.getName.bind(user1);
+// console.log(getNameFn());   
+
+// function User(name) {
+//     this.name = name;
+    
+//     this.getName = function() {
+//         return this.name;
+//     };
+// }
+
+// const user1 = new User("Vishnu");
+
+// const getNameFn = user1.getName;
+// console.log(getNameFn.call(user1));  
+
+
+// const button = {
+//     text: "Click Me",
+//     handleClick: function() {
+//         console.log(this.text);
+//     }
+// };
+
+// document.body.text = "Hello, Body!";
+// document.body.addEventListener("click", button.handleClick);
+
+
+// function counter(){
+//     this.count=0;
+
+//     setTimeout(()=>{
+//         this.count++;
+//         console.log(this.count);
+//         console.log("execute");
+//     }, 1000);
+// }
+
+// const counter1= new counter();
+
+
+// class person{
+//     constructor(name){
+//         this.name=name;
+//     }
+
+//     printName(){
+//         console.log(this.name);
+//     }
+// };
+
+// const user=new person("vishnu");
+
+// const user1=person.printName;
+// console.log(user1.printName());
+
+
+// class account{
+//     constructor(AccountNumber,AccountHolderName,balance){
+//         this.AccountNumber=AccountNumber;
+//         this.AccountHolderName=AccountHolderName;
+//         this.balance=balance;
+//     }
+
+//     deposit(amount){
+//         this.balance+=amount
+//     }
+
+//     withdraw(amount){
+//         if(this.balance>=amount){
+//             this.balance-=amount
+//         }else{
+//             console.log("insafficient funds");
+//         }
+//     }
+
+//     getBalance(){
+//         return this.balance;
+//     }
+// }
+
+
+// const bank1=new account(123,"vishnu",700);
+// const bank2=new account(123,"panda",1200);
+
+// bank1.deposit(700);
+
+// bank2.withdraw(200);
+
+// console.log(bank1.getBalance());
+// console.log(bank2.getBalance());
