@@ -9,14 +9,14 @@
 
 // console.log(a);
 
-
-
 // let animal={
 //     name:"animal",
 //     eat(a,b){
 //         console.log("i "+this.name+" eating "+a+" "+b);
 //     }
 // }
+
+
 
 // let human={
 //     name:"vishnu"

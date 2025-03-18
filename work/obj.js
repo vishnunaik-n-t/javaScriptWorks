@@ -1,12 +1,12 @@
 let obj={
-    name:"vishnu",
+    name1:"vishnu",
     class1:11,
     age:22
 }
 
-let {name,cls,age}=obj;
+let {name1,cls,age}=obj;
 
-console.log(name);
+console.log(name1);
 console.log(cls);
 console.log(age);
 

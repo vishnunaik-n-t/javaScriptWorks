@@ -7,7 +7,8 @@
 
 // // alert("hello jarvis");
 
-// prompt("please enter you age");
+// const age=prompt("please enter you age");
+// console.log(age);
 
 
 // let head=document.getElementById("para");

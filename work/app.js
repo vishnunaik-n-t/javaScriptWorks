@@ -1,12 +1,8 @@
-// console.log("hello jarvis");
+function greet(greeting, punctuation) {
+    console.log(greeting + ", " + this.name + punctuation);
+}
 
+const person = { name: "Vishnu" };
 
-
-// let arr=[1,2,3,5,6,7,3,2];
-
-
-// for( var i of arr){
-//     console.log(i);
-// }
-
-
+const greetVishnu = greet.bind(person, "Hey");
+greetVishnu("!!!"); 

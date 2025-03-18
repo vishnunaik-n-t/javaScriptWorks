@@ -38,7 +38,7 @@
 //     for (let i = 1; i <= 6; i++) {
 //         setTimeout(function () {
 //             console.log(`Timer ${i}`);
-//         }, 1000);
+//         }, 5000);
 //     }
 // }
 // createTimers(); 
@@ -60,13 +60,14 @@
 // outer()();
 
 
-// function attachEvent() {
-//     let message = "Vishnu";
-//     const btn = document.getElementById("btn");
+// let message = "Vishnu";
+// const btn = document.getElementById("btn");
 
-//     function clickHandler() {
-//         console.log(message);
-//     }
+// function clickHandler() {
+//     console.log(message);
+// }
+
+// function attachEvent() {
 
 //     btn.removeEventListener("click", clickHandler);
 //     btn.addEventListener("click", clickHandler);
@@ -83,22 +84,22 @@
 //     })(i);
 // }
 
-// function once(fd) {
-//     let executed = false;
+function once(fd) {
+    let executed = false;
     
-//     return function (...args) {
-//         if (!executed) {
-//             executed = true;
-//             return fd(...args);
-//         } else {
-//             console.log("Function already executed!");
-//         }
-//     };
-// }
+    return function (...args) {
+        if (!executed) {
+            executed = true;
+            return fd(...args);
+        } else {
+            console.log("Function already executed!");
+        }
+    };
+}
 
-// const initialize = once((name) => console.log(`Initialization done! ${name}`));
-// initialize("vishnu"); 
-// initialize();
+const initialize = once((name) => console.log(`Initialization done! ${name}`));
+initialize("vishnu"); 
+initialize();
 
 function add(a) {
     return function (b) {
@@ -108,7 +109,7 @@ function add(a) {
     };
 }
 
-console.log(add(2)(3)(5)); // 10
+console.log(add(2)(3)(5)); 
 
 
 
