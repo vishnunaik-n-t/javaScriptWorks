@@ -1,4 +1,4 @@
-const pipe=(...agrs)=>(value)=>agrs.reduce((acc,fn)=>fn(acc),value);
+const pipe=(...agrs)=>(value)=>agrs.reduce((acc,fn)=>fn(acc), value);
 
 let add=(x)=>x+2;
 let mul=(y)=>y*y;
